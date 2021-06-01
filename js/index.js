@@ -3,7 +3,7 @@ import { facturas } from "../datos/facturas.js";
 const tablaFacturas = document.querySelector(".tablaFacturas");
 console.log(tablaFacturas);
 
-for (const { numero, tipo } of facturas) {
+for (const { numero, tipo ,concepto } of facturas) {
   if (tipo === "ingreso") {
     console.log(numero);
     const facturaElemento = document
@@ -18,6 +18,8 @@ for (const { numero, tipo } of facturas) {
     // Fecha Factura
 
     // Concepto Factura
+    const datoConcepto = facturaElemento.querySelector(".conceptoFactura");
+    datoConcepto.textContent = concepto;
 
     // Base
 
