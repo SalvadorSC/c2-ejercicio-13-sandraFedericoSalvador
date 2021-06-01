@@ -4,7 +4,8 @@ const tablaFacturas = document.querySelector(".tablaFacturas");
 console.log(tablaFacturas);
 let totalBaseMarronero = 0;
 
-for (const { numero, tipo, fecha, abonada, vencimiento, base } of facturas) {
+
+for (const { numero, tipo, fecha, abonada, vencimiento, base, concepto } of facturas) {
   if (tipo === "ingreso") {
     console.log(numero);
     const facturaElemento = document
@@ -24,13 +25,17 @@ for (const { numero, tipo, fecha, abonada, vencimiento, base } of facturas) {
       dateFactura.getMonth() + 1
     }/${dateFactura.getFullYear()}`;
     // Concepto Factura
+    const datoConcepto = facturaElemento.querySelector(".conceptoFactura");
+    datoConcepto.textContent = concepto;
 
     // Base
+    const datoBase = facturaElemento.querySelector(".baseFactura");
+    datoBase.textContent = base;
+
 
     // IVA
 
     // TOTAL
-
     // TOTAL Base
     const totalBase = document.querySelector(".total-base");
     // const calculoTotalBase = facturas.reduce((acumulador, {base}) => base + acumulador,0);
