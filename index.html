@@ -12,6 +12,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     />
+    <script src="js/index.js" type="module"></script>
     <link rel="stylesheet" href="estilos.css" />
     <title>Mis Facturas</title>
   </head>
@@ -43,46 +44,16 @@
               <th class="col-max">Vence</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1000</td>
-              <td>13/06/2018</td>
-              <td>App Angular</td>
-              <td>3000€</td>
-              <td>630€ (21%)</td>
-              <td>3630€</td>
-              <td class="table-success">Abonada</td>
-              <td class="table-success">-</td>
-            </tr>
-            <tr>
-              <td>1000</td>
-              <td>13/06/2018</td>
-              <td>App Angular</td>
-              <td>3000€</td>
-              <td>630€ (21%)</td>
-              <td>3630€</td>
-              <td class="table-success">Abonada</td>
-              <td class="table-success">-</td>
-            </tr>
-            <tr>
-              <td>1000</td>
-              <td>13/06/2018</td>
-              <td>App Angular</td>
-              <td>3000€</td>
-              <td>630€ (21%)</td>
-              <td>3630€</td>
-              <td class="table-danger">Pendiente</td>
-              <td class="table-danger">28/2/2021 (hace x días)</td>
-            </tr>
-            <tr>
-              <td>1000</td>
-              <td>13/06/2018</td>
-              <td>App Angular</td>
-              <td>3000€</td>
-              <td>630€ (21%)</td>
-              <td>3630€</td>
-              <td class="table-danger">Pendiente</td>
-              <td class="table-success">1/4/2021 (faltan x días)</td>
+          <tbody class="tablaFacturas">
+            <tr class="factura-molde">
+              <td class="numFactura"></td>
+              <td class="fechaFactura">sdasd</td>
+              <td class="conceptoFactura"></td>
+              <td class="baseFactura"></td>
+              <td class="ivaFactura"></td>
+              <td class="totalFactura"></td>
+              <td class="estadoFactura table-success"></td>
+              <td class="vencimientoFactura table-danger"></td>
             </tr>
           </tbody>
           <tfoot>
