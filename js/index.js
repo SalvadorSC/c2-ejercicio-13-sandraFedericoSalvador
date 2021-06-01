@@ -3,9 +3,19 @@ import { facturas } from "../datos/facturas.js";
 const tablaFacturas = document.querySelector(".tablaFacturas");
 console.log(tablaFacturas);
 let totalBaseMarronero = 0;
+let totalIvaMarronero = 0;
+let totalBaseIvaMarronero = 0;
 
-
-for (const { numero, tipo, fecha, abonada, vencimiento, base, concepto } of facturas) {
+for (const {
+  numero,
+  tipo,
+  fecha,
+  abonada,
+  vencimiento,
+  base,
+  concepto,
+  tipoIva,
+} of facturas) {
   if (tipo === "ingreso") {
     console.log(numero);
     const facturaElemento = document
@@ -32,17 +42,20 @@ for (const { numero, tipo, fecha, abonada, vencimiento, base, concepto } of fact
     const datoBase = facturaElemento.querySelector(".baseFactura");
     datoBase.textContent = base;
 
-
     // IVA
 
     // TOTAL
     // TOTAL Base
     const totalBase = document.querySelector(".total-base");
-    // const calculoTotalBase = facturas.reduce((acumulador, {base}) => base + acumulador,0);
-
+    const totalIva = document.querySelector(".total-iva");
+    const totalBaseIva = document.querySelector(".total-base-iva");
     totalBaseMarronero = base + totalBaseMarronero;
     totalBase.textContent = `${totalBaseMarronero} €`;
-
+    const ivaFactura = (base * tipoIva) / 100;
+    totalIvaMarronero = ivaFactura + totalIvaMarronero;
+    totalIva.textContent = `${totalIvaMarronero} €`;
+    totalBaseIvaMarronero = totalBaseMarronero + totalIvaMarronero;
+    totalBaseIva.textContent = `${totalBaseIvaMarronero} €`;
     // Estado Factura
 
     // Vencimiento Factura
