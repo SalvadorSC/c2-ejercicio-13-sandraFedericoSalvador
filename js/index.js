@@ -1,6 +1,7 @@
 import { facturas } from "../datos/facturas.js";
 
 const tablaFacturas = document.querySelector(".tablaFacturas");
+
 let totalBaseMarronero = 0;
 let totalIvaMarronero = 0;
 let totalBaseIvaMarronero = 0;
@@ -16,6 +17,7 @@ for (const {
   tipoIva,
 } of facturas) {
   if (tipo === "ingreso") {
+
     const facturaElemento = document
       .querySelector(".factura-molde")
       .cloneNode(true);
@@ -25,7 +27,6 @@ for (const {
     const numFactura = facturaElemento.querySelector(".numFactura");
     numFactura.textContent = numero;
 
-    // Fecha Factura
     const fechaFactura = facturaElemento.querySelector(".fechaFactura");
     const dateFactura = new Date(fecha);
 
@@ -41,8 +42,14 @@ for (const {
     datoBase.textContent = base;
 
     // IVA
-
+       const iva = tipoIva/base * 100; 
+    const taxaIva = document.querySelector(".ivaFactura");
+    console.log(taxaIva);
+    taxaIva.textContent = iva.toFixed(2);
     // TOTAL
+       const total = (base + iva).toFixed(2) + " €";
+    const totalFactura = document.querySelector(".totalFactura");
+    totalFactura.textContent = total;
     // TOTAL Base
     const totalBase = document.querySelector(".total-base");
     const totalIva = document.querySelector(".total-iva");
@@ -87,3 +94,4 @@ for (const {
     tablaFacturas.append(facturaElemento);
   }
 }
+
