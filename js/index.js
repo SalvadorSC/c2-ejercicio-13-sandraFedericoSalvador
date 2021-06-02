@@ -1,7 +1,6 @@
 import { facturas } from "../datos/facturas.js";
 
 const tablaFacturas = document.querySelector(".tablaFacturas");
-console.log(tablaFacturas);
 let totalBaseMarronero = 0;
 let totalIvaMarronero = 0;
 let totalBaseIvaMarronero = 0;
@@ -17,7 +16,6 @@ for (const {
   tipoIva,
 } of facturas) {
   if (tipo === "ingreso") {
-    console.log(numero);
     const facturaElemento = document
       .querySelector(".factura-molde")
       .cloneNode(true);
