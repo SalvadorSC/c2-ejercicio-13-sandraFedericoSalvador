@@ -69,14 +69,14 @@ for (const {
     if (abonada) {
       vencimientoFactura.textContent = "-";
       vencimientoFactura.classList.add("table-success");
-    } else if (!abonada && vencimiento - fecha < 0) {
+    } else if (!abonada && vencimiento - fechaDeHoy > 0) {
       vencimientoFactura.textContent = `${dateVencimiento.getDate()}/${
         dateVencimiento.getMonth() + 1
       }/${dateVencimiento.getFullYear()} dentro de ${Math.floor(
         diferenciaDias
       )} días `;
       vencimientoFactura.classList.add("table-success");
-    } else {
+    } else if (!abonada && vencimiento - fechaDeHoy < 0) {
       vencimientoFactura.textContent = `${dateVencimiento.getDate()}/${
         dateVencimiento.getMonth() + 1
       }/${dateVencimiento.getFullYear()} hace  ${Math.floor(
