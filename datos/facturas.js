@@ -14,7 +14,7 @@ export const facturas = [
     id: 2,
     numero: "1001",
     fecha: 1603607940000,
-    vencimiento: 1606804740000,
+    vencimiento: 1622878433000,
     concepto: "Configuración virtual host",
     base: 50,
     tipoIva: 21,

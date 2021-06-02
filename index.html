@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,47 +26,46 @@
             <input type="text" class="form-control form-control-sm" />
           </label>
         </div>
-      </div>
-      <table class="listado table table-striped table-bordered table-hover">
-        <thead class="thead-light">
-          <tr>
-            <th class="col-min">Num.</th>
-            <th class="col-med">Fecha</th>
-            <th class="col-concepto">Concepto</th>
-            <th class="col-med">Base</th>
-            <th class="col-max">IVA</th>
-            <th class="col-med">Total</th>
-            <th class="col-max">Estado</th>
-            <th class="col-max">Vence</th>
-          </tr>
-        </thead>
-        <tbody class="tablaFacturas">
-          <tr class="factura-molde">
-            <td class="numFactura"></td>
-            <td class="fechaFactura"></td>
-            <td class="conceptoFactura"></td>
-            <td class="baseFactura"></td>
-            <td class="ivaFactura"></td>
-            <td class="totalFactura"></td>
-            <td class="estadoFactura table-success"></td>
-            <td class="vencimientoFactura table-danger"></td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th class="text-right" colspan="3">Totales:</th>
-            <td>5000€</td>
-            <td>5000€</td>
-            <td>5000€</td>
-            <td colspan="2"></td>
-          </tr>
-        </tfoot>
-      </table>
-    </main>
-  </section>
-  <div class="loading off">
-    <img src="img/loading.svg" alt="cargando" />
-  </div>
-</body>
 
+        <table class="listado table table-striped table-bordered table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th class="col-min">Num.</th>
+              <th class="col-med">Fecha</th>
+              <th class="col-concepto">Concepto</th>
+              <th class="col-med">Base</th>
+              <th class="col-max">IVA</th>
+              <th class="col-med">Total</th>
+              <th class="col-max">Estado</th>
+              <th class="col-max">Vence</th>
+            </tr>
+          </thead>
+          <tbody class="tablaFacturas">
+            <tr class="factura-molde">
+              <td class="numFactura"></td>
+              <td class="fechaFactura"></td>
+              <td class="conceptoFactura"></td>
+              <td class="baseFactura"></td>
+              <td class="ivaFactura"></td>
+              <td class="totalFactura"></td>
+              <td class="estadoFactura table-success"></td>
+              <td class="vencimientoFactura"></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th class="text-right" colspan="3">Totales:</th>
+              <td class="total-base"></td>
+              <td class="total-iva"></td>
+              <td class="total-base-iva"></td>
+              <td colspan="2"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </main>
+    </section>
+    <div class="loading off">
+      <img src="img/loading.svg" alt="cargando" />
+    </div>
+  </body>
 </html>
