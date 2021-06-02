@@ -62,20 +62,26 @@ for (const {
     const vencimientoFactura = facturaElemento.querySelector(
       ".vencimientoFactura"
     );
+    const fechaDeHoy = new Date();
+    const milisegundosDia = 86400000;
     const dateVencimiento = new Date(vencimiento);
-
+    const diferenciaDias = (vencimiento - fechaDeHoy) / milisegundosDia;
     if (abonada) {
       vencimientoFactura.textContent = "-";
       vencimientoFactura.classList.add("table-success");
     } else if (!abonada && vencimiento - fecha < 0) {
       vencimientoFactura.textContent = `${dateVencimiento.getDate()}/${
         dateVencimiento.getMonth() + 1
-      }/${dateVencimiento.getFullYear()} (dentro de X días)`;
+      }/${dateVencimiento.getFullYear()} dentro de ${Math.floor(
+        diferenciaDias
+      )} días `;
       vencimientoFactura.classList.add("table-success");
     } else {
       vencimientoFactura.textContent = `${dateVencimiento.getDate()}/${
         dateVencimiento.getMonth() + 1
-      }/${dateVencimiento.getFullYear()} (hace X días)`;
+      }/${dateVencimiento.getFullYear()} hace  ${Math.floor(
+        diferenciaDias * -1
+      )} días`;
       vencimientoFactura.classList.add("table-danger");
     }
     //
